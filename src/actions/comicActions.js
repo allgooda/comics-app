@@ -25,11 +25,17 @@ export function getComics() {
         axios.get(urls[9]),
       ])
       .then(function(response) {
-        console.log(response);
         dispatch({type:"GET_COMICS", payload: response})
       })
       .catch(function(err) {
         dispatch({type:"GET_BOOKS_REJECTED", payload:err})
       })
+  }
+}
+
+export function removeComic(num) {
+  return {
+    type: "REMOVE_COMIC",
+    payload: num,
   }
 }

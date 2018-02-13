@@ -22,6 +22,15 @@
   font-size: large;
 }
 
+.comic-list-container {
+  width: 330px;
+  margin: 0px auto;
+}
+
+.card-space {
+  margin-bottom: 44px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -7,9 +7,6 @@ import {getComics} from '../src/actions/comicActions'
 import ComicsList from './components/comicsList'
 
 class App extends Component {
-  componentDidMount() {
-    this.props.getComics();
-  }
 
   render() {
     return (
@@ -20,10 +17,4 @@ class App extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    getComics: getComics,
-  }, dispatch)
-}
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;
