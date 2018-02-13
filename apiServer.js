@@ -16,7 +16,6 @@ app.all('/*', function(req, res, next) {
 app.get('/comics/:id', function(req, res) {
   var url = 'https://xkcd.com/' + req.params.id + '/info.0.json';
   request.get(url, function (error, response, body) {
-    console.log(body);
     res.json(body);
   })
 })

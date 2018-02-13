@@ -4,7 +4,8 @@ export function comicsReducers(state={
 
   switch(action.type) {
     case "GET_COMICS":
-      return 'GET COMICS REDUCER';
+      console.log(action.payload);
+      return {...state, comics: [...action.payload]};
       break;
   }
 

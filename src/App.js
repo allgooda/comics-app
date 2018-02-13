@@ -4,7 +4,7 @@ import './App.css';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getComics} from '../src/actions/comicActions'
-
+import ComicsList from './components/comicsList'
 
 class App extends Component {
   componentDidMount() {
@@ -13,17 +13,9 @@ class App extends Component {
 
   render() {
     return (
-      // <Provider store={store}>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-        </div>
-      // </Provider>
+      <div className="App">
+        <ComicsList />
+      </div>
     );
   }
 }

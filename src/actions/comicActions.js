@@ -3,7 +3,8 @@ import axios from 'axios';
  function buildUrlsArray() {
    var urls = [];
    for(var i=1; i < 11; i ++) {
-     urls.push('http://localhost:3001/comics/' + i)
+      var random = Math.floor(Math.random() * 1954)
+      urls.push('http://localhost:3001/comics/' + random)
    }
    return urls;
  }
