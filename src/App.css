@@ -1,5 +1,7 @@
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
+  background-color: rgba(0,0,0,.22);
 }
 
 .App-logo {
@@ -28,6 +30,10 @@
 }
 
 .card-space {
+  margin-bottom: 44px;
+}
+
+.bottom-padding {
   margin-bottom: 44px;
 }
 

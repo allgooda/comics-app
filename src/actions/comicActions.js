@@ -39,3 +39,28 @@ export function removeComic(num) {
     payload: num,
   }
 }
+
+export function generateComics() {
+  console.log('yes')
+    return function(dispatch) {
+    var urls = buildUrlsArray();
+    axios.all([
+        axios.get(urls[0]),
+        axios.get(urls[1]),
+        axios.get(urls[2]),
+        axios.get(urls[3]),
+        axios.get(urls[4]),
+        axios.get(urls[5]),
+        axios.get(urls[6]),
+        axios.get(urls[7]),
+        axios.get(urls[8]),
+        axios.get(urls[9]),
+      ])
+      .then(function(response) {
+        dispatch({type:"GET_MORE_COMICS", payload: response})
+      })
+      .catch(function(err) {
+        dispatch({type:"GET_MORE_REJECTED", payload:err})
+      })
+  }
+}
