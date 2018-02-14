@@ -55,7 +55,7 @@ class ComicsList extends Component {
             {comicsArr.data.alt}
           </div>
           <div className="mdl-card__actions mdl-card--border">
-            <a target="_blank" href="https://xkcd.com/#{comicsArr.data.num}/info.0.json"  className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            <a target="_blank" href={'https://xkcd.com/' + comicsArr.data.num}  className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
               VIEW
             </a>
           </div>
