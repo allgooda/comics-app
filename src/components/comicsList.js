@@ -48,7 +48,7 @@ class ComicsList extends Component {
         <div key={comicsArr.data.num} className="demo-card-square mdl-card mdl-shadow--2dp card-space">
 
           <div className="mdl-card__title mdl-card--expand">
-            <h2 className="mdl-card__title-text">#{comicsArr.data.num} - {comicsArr.data.title}</h2>
+            <h2 className="mdl-card__title-text">#{comicsArr.data.num} - {comicsArr.data.safe_title}</h2>
           </div>
 
           <div className="mdl-card__supporting-text">
@@ -72,7 +72,7 @@ class ComicsList extends Component {
         {booksList}
 
         <Modal
-          title="Finished this comic?"
+          title="Finished reading this comic?"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
