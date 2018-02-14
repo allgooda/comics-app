@@ -51,8 +51,10 @@ class ComicsList extends Component {
             <h2 className="mdl-card__title-text">#{comicsArr.data.num} - {comicsArr.data.safe_title}</h2>
           </div>
 
+          <img src={comicsArr.data.img} width="100%" height="auto" />
+
           <div className="mdl-card__supporting-text">
-            {comicsArr.data.alt}
+            Published: {comicsArr.data.year}
           </div>
           <div className="mdl-card__actions mdl-card--border">
             <a target="_blank" href={'https://xkcd.com/' + comicsArr.data.num}  className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
