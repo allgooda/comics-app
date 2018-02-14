@@ -20,14 +20,15 @@ class ComicsList extends Component {
     this.props.generateComics();
   }
 
-  showModal = () => {
+  showModal = (num) => {
     this.setState({
       visible: true,
+      comic: num,
     });
   }
 
   handleOk = (e) => {
-    console.log(e);
+    this.removeComic(this.state.comic);
     this.setState({
       visible: false,
     });
@@ -36,10 +37,9 @@ class ComicsList extends Component {
     console.log(e);
     this.setState({
       visible: false,
+      comic: null,
     });
   }
-
-  // onClick={this.removeComic.bind(this, comicsArr.data.num)}
 
   render() {
 
@@ -60,7 +60,7 @@ class ComicsList extends Component {
             </a>
           </div>
 
-          <Button type="primary" onClick={this.showModal}>
+          <Button type="primary" onClick={this.showModal.bind(this, comicsArr.data.num)}>
             I Read this one!
           </Button>
         </div>
