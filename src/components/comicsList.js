@@ -16,8 +16,11 @@ class ComicsList extends Component {
   }
 
   generateComics() {
-    console.log('More comics!');
-    this.props.generateComics();
+    let currentComics = [];
+    for(var i=0; i < this.props.comics.length; i++) {
+      currentComics.push(this.props.comics[i].data.num)
+    }
+    this.props.generateComics(currentComics);
   }
 
   showModal = (num) => {

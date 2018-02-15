@@ -1,12 +1,32 @@
 import axios from 'axios';
 
- function buildUrlsArray() {
-   var urls = [];
-   for(var i=1; i < 11; i ++) {
-      var random = Math.floor(Math.random() * 1954)
-      urls.push('http://localhost:3001/comics/' + random)
+ function buildUrlsArray(current) {
+   let arr = [];
+
+   while(arr.length < 10){
+     var random = Math.floor(Math.random()*1955) + 1;
+     if(current) {
+      if(arr.indexOf('http://localhost:3001/comics/' + random) > -1 || current.indexOf(random) > -1) continue;
+      arr[arr.length] = 'http://localhost:3001/comics/' + random;
+      console.log(arr);
+     } else {
+       if(arr.indexOf('http://localhost:3001/comics/' + random) > -1) continue;
+       arr[arr.length] = 'http://localhost:3001/comics/' + random;
+     }
    }
-   return urls;
+   // for(var i=1; i < 11; i++) {
+   //    var random = Math.floor(Math.random() * 1955)
+   //    if (current) {
+   //      console.log(current.indexOf(random));
+   //      if(current.indexOf(random) !== -1) {
+   //         while(random === current[current.indexOf(random)]) {
+   //           random = Math.floor(Math.random() * 1955);
+   //         }
+   //      }
+   //    }
+   //    urls.push('http://localhost:3001/comics/' + random)
+   // }
+   return arr;
  }
 
 export function getComics() {
@@ -40,9 +60,9 @@ export function removeComic(num) {
   }
 }
 
-export function generateComics() {
+export function generateComics(currentComics) {
   return function(dispatch) {
-  var urls = buildUrlsArray();
+  var urls = buildUrlsArray(currentComics);
   axios.all([
       axios.get(urls[0]),
       axios.get(urls[1]),
@@ -63,3 +83,8 @@ export function generateComics() {
     })
   }
 }
+
+
+
+
+
